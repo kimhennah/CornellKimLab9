@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "249176898293",
+    "firebase_url": "https://cornellkimlab9.firebaseio.com",
+    "project_id": "cornellkimlab9",
+    "storage_bucket": "cornellkimlab9.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:249176898293:android:4f86d5cf1189ffe4",
+        "android_client_info": {
+          "package_name": "com.cornell.kim"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "249176898293-05g7964soidkprbt73d5f47jqk63cmci.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.cornell.kim",
+            "certificate_hash": "c131e8db7c7d9926475fe8bd577b718cac912e4b"
+          }
+        },
+        {
+          "client_id": "249176898293-5n573veco2ukuh44h96ss40ncm4jqlqt.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDXSx6fPJOtWtO-Odf-anjcWOtWK0LCeVw"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "249176898293-5n573veco2ukuh44h96ss40ncm4jqlqt.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
