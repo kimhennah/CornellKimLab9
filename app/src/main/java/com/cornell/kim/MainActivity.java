@@ -93,23 +93,27 @@ public class MainActivity extends AppCompatActivity {
         age = Integer.parseInt(eAge.getText().toString());
         gender = eGender.getText().toString().trim();
 
-        if(userList.isEmpty()) {
-            user = new Users(name, age, gender);
-            String id = dbUsers.push().getKey();
-            dbUsers.child(id).setValue(user);
-            Toast.makeText(this, "Record Stored.", Toast.LENGTH_LONG).show();
+        if (name.equals("") || gender.equals("")) {
+            Toast.makeText(this, "Please input values on all fields.", Toast.LENGTH_LONG).show();
         } else {
-            for(int i = 0; i < userList.size(); i++) {
-                String storedFname = userList.get(i).getFname();
-                if(storedFname.equals(name)) {
-                    Toast.makeText(this, "Record Exists.", Toast.LENGTH_LONG).show();
-                    break;
-                } else {
-                    user = new Users(name, age, gender);
-                    String id = dbUsers.push().getKey();
-                    dbUsers.child(id).setValue(user);
-                    Toast.makeText(this, "Record Stored.", Toast.LENGTH_SHORT).show();
-                    break;
+            if (userList.isEmpty()) {
+                user = new Users(name, age, gender);
+                String id = dbUsers.push().getKey();
+                dbUsers.child(id).setValue(user);
+                Toast.makeText(this, "Record Stored.", Toast.LENGTH_LONG).show();
+            } else {
+                for (int i = 0; i < userList.size(); i++) {
+                    String storedFname = userList.get(i).getFname();
+                    if (storedFname.equals(name)) {
+                        Toast.makeText(this, "Record Exists.", Toast.LENGTH_LONG).show();
+                        break;
+                    } else {
+                        user = new Users(name, age, gender);
+                        String id = dbUsers.push().getKey();
+                        dbUsers.child(id).setValue(user);
+                        Toast.makeText(this, "Record Stored.", Toast.LENGTH_SHORT).show();
+                        break;
+                    }
                 }
             }
         }
