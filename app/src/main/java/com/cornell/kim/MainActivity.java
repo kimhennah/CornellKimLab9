@@ -93,14 +93,19 @@ public class MainActivity extends AppCompatActivity {
         age = Integer.parseInt(eAge.getText().toString());
         gender = eGender.getText().toString().trim();
 
+        String g1 = "Male", g2 = "Female";
+
         if (name.equals("") || gender.equals("")) {
             Toast.makeText(this, "Please input values on all fields.", Toast.LENGTH_LONG).show();
+        }
+        else if (!gender.equalsIgnoreCase(g1) && !gender.equalsIgnoreCase(g2)) {
+            Toast.makeText(this, "Please input valid value: Male/Female", Toast.LENGTH_LONG).show();
         } else {
             if (userList.isEmpty()) {
                 user = new Users(name, age, gender);
                 String id = dbUsers.push().getKey();
                 dbUsers.child(id).setValue(user);
-                Toast.makeText(this, "Record Stored.", Toast.LENGTH_LONG).show();
+                Toast.makeText(this, "Record Added Successfully.", Toast.LENGTH_LONG).show();
             } else {
                 for (int i = 0; i < userList.size(); i++) {
                     String storedFname = userList.get(i).getFname();
@@ -111,7 +116,7 @@ public class MainActivity extends AppCompatActivity {
                         user = new Users(name, age, gender);
                         String id = dbUsers.push().getKey();
                         dbUsers.child(id).setValue(user);
-                        Toast.makeText(this, "Record Stored.", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(this, "Record Stored Successfully.", Toast.LENGTH_SHORT).show();
                         break;
                     }
                 }
